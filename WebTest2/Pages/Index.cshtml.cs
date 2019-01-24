@@ -10,10 +10,18 @@ namespace WebTest2.Pages
 {
     public class IndexModel : PageModel
     {
-        //private readonly IGuidTransientAppService _guidTransientAppService; //#构造函数注入
-        public IGuidTransientAppService GuidTransientAppService { get; set; }
-        public IGuidScopedAppService GuidScopedAppService { get; set; }
-        public IGuidSingletonAppService GuidSingletonAppService { get; set; }
+        private readonly IGuidTransientAppService _guidTransientAppService; //#构造函数注入
+        private readonly IGuidScopedAppService _guidScopedAppService;
+        private readonly IGuidSingletonAppService _guidSingletonAppService;
+
+        public IndexModel(IGuidTransientAppService guidTransientAppService,
+           IGuidScopedAppService guidScopedAppService, IGuidSingletonAppService guidSingletonAppService)
+        {
+            _guidTransientAppService = guidTransientAppService;
+            _guidScopedAppService = guidScopedAppService;
+            _guidSingletonAppService = guidSingletonAppService;
+        }
+
         public string GuidItem1 { get; set; }
         public string GuidItem2 { get; set; }
         public string GuidItem3 { get; set; }
@@ -22,9 +30,9 @@ namespace WebTest2.Pages
         //private readonly IGuidSingletonAppService _guidSingletonAppService;
         public void OnGet()
         {
-            GuidItem1 = GuidTransientAppService.GuidItem().ToString();
-            GuidItem2 = GuidScopedAppService.GuidItem().ToString();
-            GuidItem3 = GuidSingletonAppService.GuidItem().ToString();
+            GuidItem1 = _guidTransientAppService.GuidItem().ToString();
+            GuidItem2 = _guidScopedAppService.GuidItem().ToString();
+            GuidItem3 = _guidSingletonAppService.GuidItem().ToString();
         }
     }
 }

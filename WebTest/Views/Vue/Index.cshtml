@@ -4,6 +4,8 @@
 }
 <div id="app">
     <native-component v-on:click.native="clickFun"></native-component>
+    <input v-model="testinfo.name" type="text" />
+
 </div>
 <script src="~/js/vue.js"></script>
 <script>
@@ -15,10 +17,16 @@
             }
         }
     })
-    new Vue({
+    var app=new Vue({
         el: '#app',
+        data() {
+            return {
+                testinfo: {}
+            }
+        },
         methods: {
             clickFun: function () {
+                this.$set(this.testinfo, 'name', 'asdfasdfdsf');
                 console.log("message: success")
             }
         }

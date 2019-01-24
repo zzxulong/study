@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,8 +15,6 @@ namespace WebTest.Models.autofacTest
         protected override void Load(ContainerBuilder builder)
         {
 
-            
-
             //注册当前程序集中以“Ser”结尾的类,暴漏类实现的所有接口，生命周期为PerLifetimeScope
             //builder.RegisterAssemblyTypes(System.Reflection.Assembly.GetExecutingAssembly()).Where(t => t.Name.EndsWith("Ser")).AsImplementedInterfaces().InstancePerLifetimeScope();
             //builder.RegisterAssemblyTypes(System.Reflection.Assembly.GetExecutingAssembly()).Where(t => t.Name.EndsWith("Repository")).AsImplementedInterfaces().InstancePerLifetimeScope();
@@ -29,7 +28,16 @@ namespace WebTest.Models.autofacTest
             builder.RegisterType<GuidSingletonAppService>().As<IGuidSingletonAppService>().PropertiesAutowired().SingleInstance();
 
             //属性注入控制器
-            builder.RegisterType<HomeController>().PropertiesAutowired();
+            var IControllerType = typeof(ControllerBase);
+            builder.RegisterAssemblyTypes(System.Reflection.Assembly.GetExecutingAssembly()).Where(t =>IControllerType.IsAssignableFrom(t) && t != IControllerType).PropertiesAutowired().InstancePerLifetimeScope();
+            //builder.RegisterType<HomeController>().PropertiesAutowired();
+
+            //builder.RegisterType(typeof(GuidScopedAppService)).AsSelf()
+            //    .OnRegistered(e => Console.WriteLine("OnRegistered在注册的时候调用!"))
+            //    .OnPreparing(e => Console.WriteLine("OnPreparing在准备创建的时候调用!"))
+            //    .OnActivating(e => Console.WriteLine("OnActivating在创建之前调用!"))
+            //    .OnActivated(e => Console.WriteLine("OnActivated创建之后调用!"))
+            //    .OnRelease(e => Console.WriteLine("OnRelease在释放占用的资源之前调用!"));
         }
         public static Assembly GetAssembly(string assemblyName)
         {

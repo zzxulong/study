@@ -1,10 +1,12 @@
 ﻿using Autofac;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.Loader;
 using System.Threading.Tasks;
+using WebTest2.Pages;
 
 namespace WebTest2.Models.Services
 {
@@ -23,6 +25,9 @@ namespace WebTest2.Models.Services
             builder.RegisterType<GuidScopedAppServiceImpl>().As<IGuidScopedAppService>().AsImplementedInterfaces().InstancePerLifetimeScope();
             //每一次依赖组件或调用Resolve()方法都会得到一个相同的共享的实例。其实就是单例模式。
             builder.RegisterType<GuidSingletonAppServiceImpl>().As<IGuidSingletonAppService>().AsImplementedInterfaces().SingleInstance();
+
+            //builder.RegisterType<IndexModel>().PropertiesAutowired();
+
         }
         public static Assembly GetAssembly(string assemblyName)
         {

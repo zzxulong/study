@@ -10,8 +10,11 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Controllers;
+using Microsoft.AspNetCore.Mvc.Filters;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using WebTest.Models.autofacTest;
 
 namespace WebTest
@@ -32,11 +35,13 @@ namespace WebTest
         {
 
             //替换控制器所有者
-            var descriptor = ServiceDescriptor.Transient<IControllerActivator, ServiceBasedControllerActivator>();
-            var registeredServiceDescriptor = services.FirstOrDefault(s => s.ServiceType == descriptor.ServiceType);
-            if (registeredServiceDescriptor != null)
-                services.Remove(registeredServiceDescriptor);
-            services.Add(descriptor);
+            //var descriptor = ServiceDescriptor.Transient<IControllerActivator, ServiceBasedControllerActivator>();
+            //var registeredServiceDescriptor = services.FirstOrDefault(s => s.ServiceType == descriptor.ServiceType);
+            //if (registeredServiceDescriptor != null)
+            //    services.Remove(registeredServiceDescriptor);
+            //services.Add(descriptor);
+            services.Replace(ServiceDescriptor.Transient<IPageFilter, PageModel>());
+        
 
 
             services.Configure<CookiePolicyOptions>(options =>
@@ -56,7 +61,6 @@ namespace WebTest
             ////Singleton（单例） 服务在第一次请求时被创建（或者当我们在ConfigureServices中指定创建某一实例并运行方法），其后的每次请求将沿用已创建服务。如果开发者的应用需要单例服务情景，请设计成允许服务容器来对服务生命周期进行操作，而不是手动实现单例设计模式然后由开发者在自定义类中进行操作
             //services.AddSingleton<IGuidSingletonAppService, GuidSingletonAppService>();
             #endregion
-
 
             #region autofac注入
             var builder = new ContainerBuilder();
