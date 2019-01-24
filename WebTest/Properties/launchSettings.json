@@ -1,0 +1,27 @@
+﻿{
+    "iisSettings": { //选择以IIS Express启动 #
+        "windowsAuthentication": false, //是否启用windows身份验证
+        "anonymousAuthentication": true, //是否启用匿名身份验证
+        "iisExpress": {
+            "applicationUrl": "http://localhost:1716", //IIS Express随机端口
+            "sslPort": 44317
+        }
+    },
+  "profiles": {
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "WebTest": { //选择本地自宿主启动，详见Program.cs文件。删除该节点也将导致Visual Studio启动选项缺失
+        "commandName": "Project",
+        "launchBrowser": true,
+        "applicationUrl": "https://localhost:5001;http://localhost:5000", //本地自宿主端口
+        "environmentVariables": {
+            "ASPNETCORE_ENVIRONMENT": "Development"
+        }
+    }
+  }
+}

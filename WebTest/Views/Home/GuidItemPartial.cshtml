@@ -1,0 +1,17 @@
+﻿@using WebTest.Models.autofacTest;
+
+@inject IGuidTransientAppService TransientAppService
+@inject IGuidScopedAppService GuidScopedAppServic
+@inject IGuidSingletonAppService GuidSingletonAppService
+
+<div class="row">
+    <div>
+        <h2>GuidItem Shows</h2>
+
+        <h3>TransientItem: @TransientAppService.GuidItem()</h3>
+
+        <h3>ScopedItem: @GuidScopedAppServic.GuidItem()</h3>
+
+        <h3>SingletonItem: @GuidSingletonAppService.GuidItem()</h3>
+    </div>
+</div>

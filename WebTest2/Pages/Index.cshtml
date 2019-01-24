@@ -1,0 +1,18 @@
+﻿@page
+@using WebTest2.Models.Services;
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="row">
+<div>
+    <h2>GuidItem Shows</h2>
+
+    <h3>TransientItem: @Model.GuidItem1</h3>
+
+    <h3>ScopedItem:@Model.GuidItem2</h3>
+
+    <h3>SingletonItem: @Model.GuidItem3</h3>
+</div>
+</div>

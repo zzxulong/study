@@ -1,0 +1,26 @@
+﻿@page
+@model WebTest.Views.Vue.IndexModel
+@{
+}
+<div id="app">
+    <native-component v-on:click.native="clickFun"></native-component>
+</div>
+<script src="~/js/vue.js"></script>
+<script>
+    Vue.component('native-component', {
+        template: `<p>asdfasdfasdf<button v-on:click='testa'>click me</button></p>`,
+        methods: {
+            testa() {
+                console.log("bbb");
+            }
+        }
+    })
+    new Vue({
+        el: '#app',
+        methods: {
+            clickFun: function () {
+                console.log("message: success")
+            }
+        }
+    })
+</script>
