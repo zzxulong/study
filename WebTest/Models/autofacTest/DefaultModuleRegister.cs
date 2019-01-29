@@ -7,6 +7,9 @@ using System.Reflection;
 using System.Runtime.Loader;
 using System.Threading.Tasks;
 using WebTest.Controllers;
+using WebTest.Core;
+using WebTest.DAL;
+using WebTest.Services.Users;
 
 namespace WebTest.Models.autofacTest
 {
@@ -21,16 +24,25 @@ namespace WebTest.Models.autofacTest
             //注册所有"MyApp.Repository"程序集中的类
             //builder.RegisterAssemblyTypes(GetAssembly("MyApp.Repository")).AsImplementedInterfaces();
             //对每一个依赖或每一次调用创建一个新的唯一的实例。这也是默认的创建实例的方式。
+            //builder.RegisterType<GuidTransientAppService>().As<IGuidTransientAppService>().PropertiesAutowired().InstancePerDependency();
+            ////在一个生命周期域中，每一个依赖或调用创建一个单一的共享的实例，且每一个不同的生命周期域，实例是唯一的，不共享的。
+            //builder.RegisterType<GuidScopedAppService>().As<IGuidScopedAppService>().PropertiesAutowired().InstancePerLifetimeScope();
+            ////每一次依赖组件或调用Resolve()方法都会得到一个相同的共享的实例。其实就是单例模式。
+            //builder.RegisterType<GuidSingletonAppService>().As<IGuidSingletonAppService>().PropertiesAutowired().SingleInstance();
+
+            builder.RegisterType<EfRepository<User>>().As<IRepository<User>>().PropertiesAutowired().InstancePerDependency();
+            //对每一个依赖或每一次调用创建一个新的唯一的实例。这也是默认的创建实例的方式。
             builder.RegisterType<GuidTransientAppService>().As<IGuidTransientAppService>().PropertiesAutowired().InstancePerDependency();
             //在一个生命周期域中，每一个依赖或调用创建一个单一的共享的实例，且每一个不同的生命周期域，实例是唯一的，不共享的。
             builder.RegisterType<GuidScopedAppService>().As<IGuidScopedAppService>().PropertiesAutowired().InstancePerLifetimeScope();
             //每一次依赖组件或调用Resolve()方法都会得到一个相同的共享的实例。其实就是单例模式。
             builder.RegisterType<GuidSingletonAppService>().As<IGuidSingletonAppService>().PropertiesAutowired().SingleInstance();
 
+            builder.RegisterType<UserService>().As<IUserService>().PropertiesAutowired().InstancePerDependency();
             //属性注入控制器
             var IControllerType = typeof(ControllerBase);
             builder.RegisterAssemblyTypes(System.Reflection.Assembly.GetExecutingAssembly()).Where(t =>IControllerType.IsAssignableFrom(t) && t != IControllerType).PropertiesAutowired().InstancePerLifetimeScope();
-            //builder.RegisterType<HomeController>().PropertiesAutowired();
+            ////builder.RegisterType<HomeController>().PropertiesAutowired();
 
             //builder.RegisterType(typeof(GuidScopedAppService)).AsSelf()
             //    .OnRegistered(e => Console.WriteLine("OnRegistered在注册的时候调用!"))

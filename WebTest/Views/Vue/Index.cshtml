@@ -2,6 +2,9 @@
 @model WebTest.Views.Vue.IndexModel
 @{
 }
+<div>
+    @Html.Raw(ViewBag.Data);
+</div>
 <div id="app">
     <native-component v-on:click.native="clickFun"></native-component>
     <input v-model="testinfo.name" type="text" />

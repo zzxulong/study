@@ -15,6 +15,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using WebTest.DAL;
 using WebTest.Models.autofacTest;
 
 namespace WebTest
@@ -34,14 +35,14 @@ namespace WebTest
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
 
-            //替换控制器所有者
+            //替换控制器所有者（属性注入使用）
             //var descriptor = ServiceDescriptor.Transient<IControllerActivator, ServiceBasedControllerActivator>();
             //var registeredServiceDescriptor = services.FirstOrDefault(s => s.ServiceType == descriptor.ServiceType);
             //if (registeredServiceDescriptor != null)
             //    services.Remove(registeredServiceDescriptor);
             //services.Add(descriptor);
-            services.Replace(ServiceDescriptor.Transient<IPageFilter, PageModel>());
-        
+            services.Replace(ServiceDescriptor.Transient<IControllerActivator, ServiceBasedControllerActivator>());
+
 
 
             services.Configure<CookiePolicyOptions>(options =>
@@ -52,6 +53,8 @@ namespace WebTest
             });
             
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddDbContext<NopMallContext>();
+            services.AddDirectoryBrowser();
 
             #region .netcore自带注入
             ////Transient 服务在每次请求时被创建，它最好被用于轻量级无状态服务

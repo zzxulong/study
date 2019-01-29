@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using WebTest.Models;
 using WebTest.Models.autofacTest;
+using WebTest.Services.Users;
 
 namespace WebTest.Controllers
 {
@@ -17,6 +18,7 @@ namespace WebTest.Controllers
         //接口注入
         public IGuidTransientAppService GuidTransientAppService { get; set; }
         public IGuidScopedAppService GuidScopedAppService { get; set; }
+        public IUserService UserService { get; set; }
         public IGuidSingletonAppService GuidSingletonAppService { get; set; }
 
         public HomeController(IGuidTransientAppService guidTransientAppService,
@@ -29,7 +31,8 @@ namespace WebTest.Controllers
 
         public IActionResult Index()
         {
-          
+            var t = UserService.GetAll();
+
             ViewBag.TransientItem = GuidTransientAppService.GuidItem();
             ViewBag.ScopedItem = GuidScopedAppService.GuidItem();
             ViewBag.SingletonItem = GuidSingletonAppService.GuidItem();
