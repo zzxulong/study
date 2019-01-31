@@ -1,13 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using WebTest.Core;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace WebTest.DAL
+namespace EFCoreDbAutoFacTest.WebEF.Models
 {
-    public partial class User:BaseEntity
+    public class UserModel:BaseNopModel
     {
+        public UserModel()
+        {
+
+        }
         public int Id { get; set; }
         public Guid UserGuid { get; set; }
         public string UserName { get; set; }

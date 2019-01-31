@@ -1,14 +1,14 @@
-﻿using System;
+﻿using EFCoreDbAutoFacTest.Core;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using WebTest.Core;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace WebTest.DAL
+namespace EFCoreDbAutoFacTest.Models.Users
 {
-    public partial class User:BaseEntity
+    public partial class User : BaseEntity
     {
-        public int Id { get; set; }
+       
         public Guid UserGuid { get; set; }
         public string UserName { get; set; }
         public string Email { get; set; }

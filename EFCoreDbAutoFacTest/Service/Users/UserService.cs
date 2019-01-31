@@ -1,11 +1,11 @@
-﻿using System;
+﻿using EFCoreDbAutoFacTest.Core.Data;
+using EFCoreDbAutoFacTest.Models.Users;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using WebTest.Core;
-using WebTest.DAL;
 
-namespace WebTest.Services.Users
+namespace EFCoreDbAutoFacTest.Service.Users
 {
     public class UserService : IUserService
     {
@@ -22,9 +22,9 @@ namespace WebTest.Services.Users
         public virtual IList<User> GetAll()
         {
             var query = _userRepository.Table;
-           
+
             query = query.OrderByDescending(c => c.CreatedOnUtc);
-            return query.ToList(); 
+            return query.ToList();
         }
 
         public virtual User Add(User user)

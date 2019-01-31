@@ -1,10 +1,10 @@
-﻿using System;
+﻿using EFCoreDbAutoFacTest.Models.Users;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using WebTest.DAL;
 
-namespace WebTest.Services.Users
+namespace EFCoreDbAutoFacTest.Service.Users
 {
     public interface IUserService
     {

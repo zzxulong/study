@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
@@ -23,7 +24,6 @@ namespace WebTest.DAL
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
                 optionsBuilder.UseSqlServer("Server=.;Database=NopMall;uid=sa;pwd=123456;");
             }
         }
@@ -34,9 +34,8 @@ namespace WebTest.DAL
 
             modelBuilder.Entity<User>(entity =>
             {
-                entity.ToTable("user");
+                entity.ToTable("user").HasKey(e => e.Id) ;
 
-                entity.Property(e => e.Id).ValueGeneratedNever();
 
                 entity.Property(e => e.Email).HasMaxLength(1000);
 

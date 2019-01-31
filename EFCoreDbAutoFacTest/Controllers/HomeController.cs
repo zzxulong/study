@@ -4,34 +4,19 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using WebTest.Models;
-using WebTest.Models.autofacTest;
-using WebTest.Services.Users;
+using EFCoreDbAutoFacTest.Models;
+using EFCoreDbAutoFacTest.Service.Users;
+using EFCoreDbAutoFacTest.Models.Users;
 
-namespace WebTest.Controllers
+namespace EFCoreDbAutoFacTest.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly IGuidTransientAppService _guidTransientAppService; //#构造函数注入
-        private readonly IGuidScopedAppService _guidScopedAppService;
-        private readonly IGuidSingletonAppService _guidSingletonAppService;
-        //接口注入
-        public IGuidTransientAppService GuidTransientAppService { get; set; }
-        public IGuidScopedAppService GuidScopedAppService { get; set; }
         public IUserService UserService { get; set; }
-        public IGuidSingletonAppService GuidSingletonAppService { get; set; }
-
-        public HomeController(IGuidTransientAppService guidTransientAppService,
-            IGuidScopedAppService guidScopedAppService, IGuidSingletonAppService guidSingletonAppService)
-        {
-            _guidTransientAppService = guidTransientAppService;
-            _guidScopedAppService = guidScopedAppService;
-            _guidSingletonAppService = guidSingletonAppService;
-        }
-
         public IActionResult Index()
         {
-            var a = UserService.Add(new DAL.User() {
+            var a = UserService.Add(new User()
+            {
                 Active = true,
                 AffiliateId = 1,
                 CannotLoginUntilDateUtc = DateTime.Now,
@@ -53,18 +38,10 @@ namespace WebTest.Controllers
                 VendorId = 1,
             });
 
-            var b = UserService.Get(1);
+            var b = UserService.Get(5);
 
             var t = UserService.GetAll();
 
-
-            ViewBag.TransientItem = GuidTransientAppService.GuidItem();
-            ViewBag.ScopedItem = GuidScopedAppService.GuidItem();
-            ViewBag.SingletonItem = GuidSingletonAppService.GuidItem();
-
-            ViewBag.TransientItem1 = GuidTransientAppService.GuidItem();
-            ViewBag.ScopedItem1 = GuidScopedAppService.GuidItem();
-            ViewBag.SingletonItem1 = GuidSingletonAppService.GuidItem();
             return View();
         }
 
