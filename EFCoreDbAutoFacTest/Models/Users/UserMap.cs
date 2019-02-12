@@ -18,7 +18,7 @@ namespace EFCoreDbAutoFacTest.Models.Users
         /// <param name="builder">The builder to be used to configure the entity</param>
         public override void Configure(EntityTypeBuilder<User> builder)
         {
-            builder.ToTable("user");
+            builder.ToTable(nameof(User));
             builder.HasKey(user => user.Id);
 
             builder.Property(user => user.UserName).HasMaxLength(1000);
