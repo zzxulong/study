@@ -9,9 +9,8 @@ using System.Threading.Tasks;
 
 namespace EFCoreDbAutoFacTest.WebEF.Mapping
 {
-    public class BaseMapperConfiguration : Profile, IOrderedMapperProfile
+    public class BaseMapperConfiguration : Profile
     {
-        public int Order => 0;
         public BaseMapperConfiguration()
         {
             CreateMap<User, UserModel>();

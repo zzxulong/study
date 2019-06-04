@@ -42,7 +42,7 @@ namespace WebTest.Models.autofacTest
             //属性注入控制器
             var IControllerType = typeof(ControllerBase);
             builder.RegisterAssemblyTypes(System.Reflection.Assembly.GetExecutingAssembly()).Where(t =>IControllerType.IsAssignableFrom(t) && t != IControllerType).PropertiesAutowired().InstancePerLifetimeScope();
-            ////builder.RegisterType<HomeController>().PropertiesAutowired();
+            builder.RegisterType<HomeController>().PropertiesAutowired();
 
             //builder.RegisterType(typeof(GuidScopedAppService)).AsSelf()
             //    .OnRegistered(e => Console.WriteLine("OnRegistered在注册的时候调用!"))
