@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using WebTest.Models;
 using WebTest.Models.autofacTest;
 using WebTest.Services.Users;
@@ -18,19 +19,26 @@ namespace WebTest.Controllers
         //接口注入
         public IGuidTransientAppService GuidTransientAppService { get; set; }
         public IGuidScopedAppService GuidScopedAppService { get; set; }
+        public ILogger _logger { get; set; }
         public IUserService UserService { get; set; }
         public IGuidSingletonAppService GuidSingletonAppService { get; set; }
 
         public HomeController(IGuidTransientAppService guidTransientAppService,
-            IGuidScopedAppService guidScopedAppService, IGuidSingletonAppService guidSingletonAppService)
+            IGuidScopedAppService guidScopedAppService,
+            IGuidSingletonAppService guidSingletonAppService,
+            ILogger<HomeController> logger
+            )
         {
             _guidTransientAppService = guidTransientAppService;
             _guidScopedAppService = guidScopedAppService;
             _guidSingletonAppService = guidSingletonAppService;
+            _logger = logger;
         }
 
         public IActionResult Index()
         {
+            _logger.LogError("asdfasdfasdf");
+
             var a = UserService.Add(new DAL.User() {
                 Active = true,
                 AffiliateId = 1,

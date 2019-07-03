@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.168
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29020.237
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudyCustomMvc", "StudyCustomMvc\StudyCustomMvc.csproj", "{D04BB52E-9D38-4D9A-92CF-F0CB11A44A41}"
 EndProject
@@ -13,7 +13,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebTest2", "WebTest2\WebTes
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFCoreDbAutoFacTest", "EFCoreDbAutoFacTest\EFCoreDbAutoFacTest.csproj", "{3B112F6F-D8CC-4DE9-A822-A9AC8D055DE8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CastleCoreTest", "CastleCoreTest\CastleCoreTest.csproj", "{EB836032-F2A5-4423-BFCE-35E83023DAAD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CastleCoreTest", "CastleCoreTest\CastleCoreTest.csproj", "{EB836032-F2A5-4423-BFCE-35E83023DAAD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModularityTest", "ModularityTest\ModularityTest.csproj", "{EF8D6781-63AA-4CA8-827E-4EDFB255F968}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinformTest", "WinformTest\WinformTest.csproj", "{733C5AEF-4B5F-41B8-9411-0666831A93A5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Extensions.Logging.Log4Net.AspNetCore", "..\..\..\gitproject\Microsoft.Extensions.Logging.Log4Net.AspNetCore\src\Microsoft.Extensions.Logging.Log4Net.AspNetCore\Microsoft.Extensions.Logging.Log4Net.AspNetCore.csproj", "{1BD88CC7-CBFA-4D75-90DF-956789B2BAE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "vuetest", "vuetest\vuetest.csproj", "{DC3E1EC2-3ED9-4DB0-B5E4-F001960D707F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +53,22 @@ Global
 		{EB836032-F2A5-4423-BFCE-35E83023DAAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB836032-F2A5-4423-BFCE-35E83023DAAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB836032-F2A5-4423-BFCE-35E83023DAAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF8D6781-63AA-4CA8-827E-4EDFB255F968}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF8D6781-63AA-4CA8-827E-4EDFB255F968}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF8D6781-63AA-4CA8-827E-4EDFB255F968}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF8D6781-63AA-4CA8-827E-4EDFB255F968}.Release|Any CPU.Build.0 = Release|Any CPU
+		{733C5AEF-4B5F-41B8-9411-0666831A93A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{733C5AEF-4B5F-41B8-9411-0666831A93A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{733C5AEF-4B5F-41B8-9411-0666831A93A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{733C5AEF-4B5F-41B8-9411-0666831A93A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BD88CC7-CBFA-4D75-90DF-956789B2BAE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BD88CC7-CBFA-4D75-90DF-956789B2BAE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BD88CC7-CBFA-4D75-90DF-956789B2BAE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BD88CC7-CBFA-4D75-90DF-956789B2BAE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC3E1EC2-3ED9-4DB0-B5E4-F001960D707F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC3E1EC2-3ED9-4DB0-B5E4-F001960D707F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC3E1EC2-3ED9-4DB0-B5E4-F001960D707F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC3E1EC2-3ED9-4DB0-B5E4-F001960D707F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -15,6 +15,8 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Log4Net.AspNetCore.Entities;
 using WebTest.DAL;
 using WebTest.Models.autofacTest;
 
@@ -85,8 +87,16 @@ namespace WebTest
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IApplicationLifetime appLifetime)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IApplicationLifetime appLifetime, ILoggerFactory loggerFactory)
         {
+            loggerFactory.AddLog4Net(new Log4NetProviderOptions() {
+                Log4NetConfigFileName = "log4net.config",
+                Watch = false,
+                OverrideCriticalLevelWith=string.Empty,
+                Name= "errorHandle",
+                PropertyOverrides = new List<NodeInfo>(),
+                LoggerRepository="default"
+            });
             if (env.IsDevelopment())//读取环境变量是否为Development，在launchSettings.json中定义
             {
                 app.UseDeveloperExceptionPage();
