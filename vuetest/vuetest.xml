@@ -132,42 +132,1106 @@
             签名
             
         </member>
-        <member name="T:vuetest.Controllers.ValuesController">
+        <member name="M:vuetest.Core.Automapper.CustomProfile.#ctor">
             <summary>
-            value
+            配置构造函数，用来创建关系映射
             </summary>
         </member>
-        <member name="M:vuetest.Controllers.ValuesController.Get">
+        <member name="T:vuetest.Core.Common.CachingAttribute">
             <summary>
-            获取全部
+            这个Attribute就是使用时候的验证，把它添加到要缓存数据的方法中，即可完成缓存的操作。注意是对Method验证有效
+            </summary>
+        </member>
+        <member name="T:vuetest.Core.Common.Helpers.Appsettings">
+            <summary>
+            appsettings.json操作类
+            </summary>
+        </member>
+        <member name="M:vuetest.Core.Common.Helpers.Appsettings.app(System.String[])">
+            <summary>
+            封装要操作的字符
+            </summary>
+            <param name="sections"></param>
+            <returns></returns>
+        </member>
+        <member name="T:vuetest.Core.Common.LogHelper.ILoggerHelper">
+            <summary>
+            日志接口
+            </summary>
+        </member>
+        <member name="M:vuetest.Core.Common.LogHelper.ILoggerHelper.Debug(System.Object,System.String)">
+            <summary>
+            调试信息
+            </summary>
+            <param name="source">source</param>
+            <param name="message">message</param>
+        </member>
+        <member name="M:vuetest.Core.Common.LogHelper.ILoggerHelper.Debug(System.Object,System.String,System.Object[])">
+            <summary>
+            调试信息
+            </summary>
+            <param name="source">source</param>
+            <param name="message">message</param>
+            <param name="ps">ps</param>
+        </member>
+        <member name="M:vuetest.Core.Common.LogHelper.ILoggerHelper.Debug(System.Type,System.String)">
+            <summary>
+            调试信息
+            </summary>
+            <param name="source">source</param>
+            <param name="message">message</param>
+        </member>
+        <member name="M:vuetest.Core.Common.LogHelper.ILoggerHelper.Info(System.Object,System.Object)">
+            <summary>
+            关键信息
+            </summary>
+            <param name="source">source</param>
+            <param name="message">message</param>
+        </member>
+        <member name="M:vuetest.Core.Common.LogHelper.ILoggerHelper.Info(System.Type,System.Object)">
+            <summary>
+            关键信息
+            </summary>
+            <param name="source">source</param>
+            <param name="message">message</param>
+        </member>
+        <member name="M:vuetest.Core.Common.LogHelper.ILoggerHelper.Warn(System.Object,System.Object)">
+            <summary>
+            警告信息
+            </summary>
+            <param name="source">source</param>
+            <param name="message">message</param>
+        </member>
+        <member name="M:vuetest.Core.Common.LogHelper.ILoggerHelper.Warn(System.Type,System.Object)">
+            <summary>
+            警告信息
+            </summary>
+            <param name="source">source</param>
+            <param name="message">message</param>
+        </member>
+        <member name="M:vuetest.Core.Common.LogHelper.ILoggerHelper.Error(System.Object,System.Object)">
+            <summary>
+            错误信息
+            </summary>
+            <param name="source">source</param>
+            <param name="message">message</param>
+        </member>
+        <member name="M:vuetest.Core.Common.LogHelper.ILoggerHelper.Error(System.Type,System.Object)">
+            <summary>
+            错误信息
+            </summary>
+            <param name="source">source</param>
+            <param name="message">message</param>
+        </member>
+        <member name="M:vuetest.Core.Common.LogHelper.ILoggerHelper.Fatal(System.Object,System.Object)">
+            <summary>
+            失败信息
+            </summary>
+            <param name="source">source</param>
+            <param name="message">message</param>
+        </member>
+        <member name="M:vuetest.Core.Common.LogHelper.ILoggerHelper.Fatal(System.Type,System.Object)">
+            <summary>
+            失败信息
+            </summary>
+            <param name="source">source</param>
+            <param name="message">message</param>
+        </member>
+        <member name="M:vuetest.Core.Common.LogHelper.ILoggerHelper.Debug(System.Object,System.Object,System.Exception)">
+            <summary>
+            调试信息
+            </summary>
+            <param name="source">source</param>
+            <param name="message">message</param>
+            <param name="exception">ex</param>
+        </member>
+        <member name="M:vuetest.Core.Common.LogHelper.ILoggerHelper.Debug(System.Type,System.Object,System.Exception)">
+            <summary>
+            调试信息
+            </summary>
+            <param name="source">source</param>
+            <param name="message">message</param>
+            <param name="exception">ex</param>
+        </member>
+        <member name="M:vuetest.Core.Common.LogHelper.ILoggerHelper.Info(System.Object,System.Object,System.Exception)">
+            <summary>
+            关键信息
+            </summary>
+            <param name="source">source</param>
+            <param name="message">message</param>
+            <param name="exception">ex</param>
+        </member>
+        <member name="M:vuetest.Core.Common.LogHelper.ILoggerHelper.Info(System.Type,System.Object,System.Exception)">
+            <summary>
+            关键信息
+            </summary>
+            <param name="source">source</param>
+            <param name="message">message</param>
+            <param name="exception">ex</param>
+        </member>
+        <member name="M:vuetest.Core.Common.LogHelper.ILoggerHelper.Warn(System.Object,System.Object,System.Exception)">
+            <summary>
+            警告信息
+            </summary>
+            <param name="source">source</param>
+            <param name="message">message</param>
+            <param name="exception">ex</param>
+        </member>
+        <member name="M:vuetest.Core.Common.LogHelper.ILoggerHelper.Warn(System.Type,System.Object,System.Exception)">
+            <summary>
+            警告信息
+            </summary>
+            <param name="source">source</param>
+            <param name="message">message</param>
+            <param name="exception">ex</param>
+        </member>
+        <member name="M:vuetest.Core.Common.LogHelper.ILoggerHelper.Error(System.Object,System.Object,System.Exception)">
+            <summary>
+            错误信息
+            </summary>
+            <param name="source">source</param>
+            <param name="message">message</param>
+            <param name="exception">ex</param>
+        </member>
+        <member name="M:vuetest.Core.Common.LogHelper.ILoggerHelper.Error(System.Type,System.Object,System.Exception)">
+            <summary>
+            错误信息
+            </summary>
+            <param name="source">source</param>
+            <param name="message">message</param>
+            <param name="exception">ex</param>
+        </member>
+        <member name="M:vuetest.Core.Common.LogHelper.ILoggerHelper.Fatal(System.Object,System.Object,System.Exception)">
+            <summary>
+            失败信息
+            </summary>
+            <param name="source">source</param>
+            <param name="message">message</param>
+            <param name="exception">ex</param>
+        </member>
+        <member name="M:vuetest.Core.Common.LogHelper.ILoggerHelper.Fatal(System.Type,System.Object,System.Exception)">
+            <summary>
+            失败信息
+            </summary>
+            <param name="source">source</param>
+            <param name="message">message</param>
+            <param name="exception">ex</param>
+        </member>
+        <member name="T:vuetest.Core.Common.LogHelper.LogHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:vuetest.Core.Common.LogHelper.LogHelper.GetLogger(System.Type)">
+            <summary>
+            获取记录器
+            </summary>
+            <param name="source">soruce</param>
+            <returns></returns>
+        </member>
+        <member name="M:vuetest.Core.Common.LogHelper.LogHelper.Debug(System.Object,System.String)">
+            <summary>
+            调试信息
+            </summary>
+            <param name="source">source</param>
+            <param name="message">message</param>
+        </member>
+        <member name="M:vuetest.Core.Common.LogHelper.LogHelper.Debug(System.Object,System.String,System.Object[])">
+            <summary>
+            调试信息
+            </summary>
+            <param name="source">source</param>
+            <param name="message">message</param>
+            <param name="ps">ps</param>
+        </member>
+        <member name="M:vuetest.Core.Common.LogHelper.LogHelper.Debug(System.Type,System.String)">
+            <summary>
+            调试信息
+            </summary>
+            <param name="source">source</param>
+            <param name="message">message</param>
+        </member>
+        <member name="M:vuetest.Core.Common.LogHelper.LogHelper.Info(System.Object,System.Object)">
+            <summary>
+            关键信息
+            </summary>
+            <param name="source">source</param>
+            <param name="message">message</param>
+        </member>
+        <member name="M:vuetest.Core.Common.LogHelper.LogHelper.Info(System.Type,System.Object)">
+            <summary>
+            关键信息
+            </summary>
+            <param name="source">source</param>
+            <param name="message">message</param>
+        </member>
+        <member name="M:vuetest.Core.Common.LogHelper.LogHelper.Warn(System.Object,System.Object)">
+            <summary>
+            警告信息
+            </summary>
+            <param name="source">source</param>
+            <param name="message">message</param>
+        </member>
+        <member name="M:vuetest.Core.Common.LogHelper.LogHelper.Warn(System.Type,System.Object)">
+            <summary>
+            警告信息
+            </summary>
+            <param name="source">source</param>
+            <param name="message">message</param>
+        </member>
+        <member name="M:vuetest.Core.Common.LogHelper.LogHelper.Error(System.Object,System.Object)">
+            <summary>
+            错误信息
+            </summary>
+            <param name="source">source</param>
+            <param name="message">message</param>
+        </member>
+        <member name="M:vuetest.Core.Common.LogHelper.LogHelper.Error(System.Type,System.Object)">
+            <summary>
+            错误信息
+            </summary>
+            <param name="source">source</param>
+            <param name="message">message</param>
+        </member>
+        <member name="M:vuetest.Core.Common.LogHelper.LogHelper.Fatal(System.Object,System.Object)">
+            <summary>
+            失败信息
+            </summary>
+            <param name="source">source</param>
+            <param name="message">message</param>
+        </member>
+        <member name="M:vuetest.Core.Common.LogHelper.LogHelper.Fatal(System.Type,System.Object)">
+            <summary>
+            失败信息
+            </summary>
+            <param name="source">source</param>
+            <param name="message">message</param>
+        </member>
+        <member name="M:vuetest.Core.Common.LogHelper.LogHelper.Debug(System.Object,System.Object,System.Exception)">
+            <summary>
+            调试信息
+            </summary>
+            <param name="source">source</param>
+            <param name="message">message</param>
+            <param name="exception">ex</param>
+        </member>
+        <member name="M:vuetest.Core.Common.LogHelper.LogHelper.Debug(System.Type,System.Object,System.Exception)">
+            <summary>
+            调试信息
+            </summary>
+            <param name="source">source</param>
+            <param name="message">message</param>
+            <param name="exception">ex</param>
+        </member>
+        <member name="M:vuetest.Core.Common.LogHelper.LogHelper.Info(System.Object,System.Object,System.Exception)">
+            <summary>
+            关键信息
+            </summary>
+            <param name="source">source</param>
+            <param name="message">message</param>
+            <param name="exception">ex</param>
+        </member>
+        <member name="M:vuetest.Core.Common.LogHelper.LogHelper.Info(System.Type,System.Object,System.Exception)">
+            <summary>
+            关键信息
+            </summary>
+            <param name="source">source</param>
+            <param name="message">message</param>
+            <param name="exception">ex</param>
+        </member>
+        <member name="M:vuetest.Core.Common.LogHelper.LogHelper.Warn(System.Object,System.Object,System.Exception)">
+            <summary>
+            警告信息
+            </summary>
+            <param name="source">source</param>
+            <param name="message">message</param>
+            <param name="exception">ex</param>
+        </member>
+        <member name="M:vuetest.Core.Common.LogHelper.LogHelper.Warn(System.Type,System.Object,System.Exception)">
+            <summary>
+            警告信息
+            </summary>
+            <param name="source">source</param>
+            <param name="message">message</param>
+            <param name="exception">ex</param>
+        </member>
+        <member name="M:vuetest.Core.Common.LogHelper.LogHelper.Error(System.Object,System.Object,System.Exception)">
+            <summary>
+            错误信息
+            </summary>
+            <param name="source">source</param>
+            <param name="message">message</param>
+            <param name="exception">ex</param>
+        </member>
+        <member name="M:vuetest.Core.Common.LogHelper.LogHelper.Error(System.Type,System.Object,System.Exception)">
+            <summary>
+            错误信息
+            </summary>
+            <param name="source">source</param>
+            <param name="message">message</param>
+            <param name="exception">ex</param>
+        </member>
+        <member name="M:vuetest.Core.Common.LogHelper.LogHelper.Fatal(System.Object,System.Object,System.Exception)">
+            <summary>
+            失败信息
+            </summary>
+            <param name="source">source</param>
+            <param name="message">message</param>
+            <param name="exception">ex</param>
+        </member>
+        <member name="M:vuetest.Core.Common.LogHelper.LogHelper.Fatal(System.Type,System.Object,System.Exception)">
+            <summary>
+            失败信息
+            </summary>
+            <param name="source">source</param>
+            <param name="message">message</param>
+            <param name="exception">ex</param>
+        </member>
+        <member name="T:vuetest.Core.UtilConvert">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:vuetest.Core.UtilConvert.ObjToInt(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="thisValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:vuetest.Core.UtilConvert.ObjToInt(System.Object,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="thisValue"></param>
+            <param name="errorValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:vuetest.Core.UtilConvert.ObjToMoney(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="thisValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:vuetest.Core.UtilConvert.ObjToMoney(System.Object,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="thisValue"></param>
+            <param name="errorValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:vuetest.Core.UtilConvert.ObjToString(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="thisValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:vuetest.Core.UtilConvert.ObjToString(System.Object,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="thisValue"></param>
+            <param name="errorValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:vuetest.Core.UtilConvert.ObjToDecimal(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="thisValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:vuetest.Core.UtilConvert.ObjToDecimal(System.Object,System.Decimal)">
+            <summary>
+            
+            </summary>
+            <param name="thisValue"></param>
+            <param name="errorValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:vuetest.Core.UtilConvert.ObjToDate(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="thisValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:vuetest.Core.UtilConvert.ObjToDate(System.Object,System.DateTime)">
+            <summary>
+            
+            </summary>
+            <param name="thisValue"></param>
+            <param name="errorValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:vuetest.Core.UtilConvert.ObjToBool(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="thisValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:vuetest.Core.DBSeed.SeedAsync(vuetest.Core.MyContext)">
+            <summary>
+            异步添加种子数据
+            </summary>
+            <param name="myContext"></param>
+            <returns></returns>
+        </member>
+        <member name="P:vuetest.Core.Models.Advertisement.ImgUrl">
+            <summary>
+            广告图片
+            </summary>
+        </member>
+        <member name="P:vuetest.Core.Models.Advertisement.Title">
+            <summary>
+            广告标题
+            </summary>
+        </member>
+        <member name="P:vuetest.Core.Models.Advertisement.Url">
+            <summary>
+            广告链接
+            </summary>
+        </member>
+        <member name="P:vuetest.Core.Models.Advertisement.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:vuetest.Core.Models.Advertisement.Createdate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:vuetest.Core.Models.RootEntity.Id">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:vuetest.Core.MyContext.ConnectionString">
+            <summary>
+            连接字符串 
+            Blog.Core
+            </summary>
+        </member>
+        <member name="P:vuetest.Core.MyContext.DbType">
+            <summary>
+            数据库类型 
+            Blog.Core 
+            </summary>
+        </member>
+        <member name="P:vuetest.Core.MyContext.Db">
+            <summary>
+            数据连接对象 
+            Blog.Core 
+            </summary>
+        </member>
+        <member name="P:vuetest.Core.MyContext.Context">
+            <summary>
+            数据库上下文实例（自动关闭连接）
+            Blog.Core 
+            </summary>
+        </member>
+        <member name="M:vuetest.Core.MyContext.#ctor">
+            <summary>
+            功能描述:构造函数
+            作　　者:Blog.Core
+            </summary>
+        </member>
+        <member name="M:vuetest.Core.MyContext.GetEntityDB``1">
+            <summary>
+            功能描述:获取数据库处理对象
+            作　　者:Blog.Core
+            </summary>
+            <returns>返回值</returns>
+        </member>
+        <member name="M:vuetest.Core.MyContext.GetEntityDB``1(SqlSugar.SqlSugarClient)">
+            <summary>
+            功能描述:获取数据库处理对象
+            作　　者:Blog.Core
+            </summary>
+            <param name="db">db</param>
+            <returns>返回值</returns>
+        </member>
+        <member name="M:vuetest.Core.MyContext.CreateClassFileByDBTalbe(System.String)">
+            <summary>
+            功能描述:根据数据库表生产实体类
+            作　　者:Blog.Core
+            </summary>       
+            <param name="strPath">实体类存放路径</param>
+        </member>
+        <member name="M:vuetest.Core.MyContext.CreateClassFileByDBTalbe(System.String,System.String)">
+            <summary>
+            功能描述:根据数据库表生产实体类
+            作　　者:Blog.Core
+            </summary>
+            <param name="strPath">实体类存放路径</param>
+            <param name="strNameSpace">命名空间</param>
+        </member>
+        <member name="M:vuetest.Core.MyContext.CreateClassFileByDBTalbe(System.String,System.String,System.String[])">
+            <summary>
+            功能描述:根据数据库表生产实体类
+            作　　者:Blog.Core
+            </summary>
+            <param name="strPath">实体类存放路径</param>
+            <param name="strNameSpace">命名空间</param>
+            <param name="lstTableNames">生产指定的表</param>
+        </member>
+        <member name="M:vuetest.Core.MyContext.CreateClassFileByDBTalbe(System.String,System.String,System.String[],System.String,System.Boolean)">
+            <summary>
+            功能描述:根据数据库表生产实体类
+            作　　者:Blog.Core
+            </summary>
+            <param name="strPath">实体类存放路径</param>
+            <param name="strNameSpace">命名空间</param>
+            <param name="lstTableNames">生产指定的表</param>
+            <param name="strInterface">实现接口</param>
+            <param name="blnSerializable">是否序列化</param>
+        </member>
+        <member name="M:vuetest.Core.MyContext.CreateTableByEntity``1(System.Boolean,``0[])">
+            <summary>
+            功能描述:根据实体类生成数据库表
+            作　　者:Blog.Core
+            </summary>
+            <param name="blnBackupTable">是否备份表</param>
+            <param name="lstEntitys">指定的实体</param>
+        </member>
+        <member name="M:vuetest.Core.MyContext.CreateTableByEntity(System.Boolean,System.Type[])">
+            <summary>
+            功能描述:根据实体类生成数据库表
+            作　　者:Blog.Core
+            </summary>
+            <param name="blnBackupTable">是否备份表</param>
+            <param name="lstEntitys">指定的实体</param>
+        </member>
+        <member name="M:vuetest.Core.MyContext.GetDbContext">
+            <summary>
+            功能描述:获得一个DbContext
+            作　　者:Blog.Core
             </summary>
             <returns></returns>
         </member>
-        <member name="M:vuetest.Controllers.ValuesController.Get(vuetest.Models.Love)">
+        <member name="M:vuetest.Core.MyContext.Init(System.String,SqlSugar.DbType)">
             <summary>
-            获取
+            功能描述:设置初始化参数
+            作　　者:Blog.Core
             </summary>
-            <param name="id"></param>
+            <param name="strConnectionString">连接字符串</param>
+            <param name="enmDbType">数据库类型</param>
+        </member>
+        <member name="M:vuetest.Core.MyContext.GetConnectionConfig(System.Boolean,System.Boolean)">
+            <summary>
+            功能描述:创建一个链接配置
+            作　　者:Blog.Core
+            </summary>
+            <param name="blnIsAutoCloseConnection">是否自动关闭连接</param>
+            <param name="blnIsShardSameThread">是否夸类事务</param>
+            <returns>ConnectionConfig</returns>
+        </member>
+        <member name="M:vuetest.Core.MyContext.GetCustomDB(SqlSugar.ConnectionConfig)">
+            <summary>
+            功能描述:获取一个自定义的DB
+            作　　者:Blog.Core
+            </summary>
+            <param name="config">config</param>
+            <returns>返回值</returns>
+        </member>
+        <member name="M:vuetest.Core.MyContext.GetCustomEntityDB``1(SqlSugar.SqlSugarClient)">
+            <summary>
+            功能描述:获取一个自定义的数据库处理对象
+            作　　者:Blog.Core
+            </summary>
+            <param name="sugarClient">sugarClient</param>
+            <returns>返回值</returns>
+        </member>
+        <member name="M:vuetest.Core.MyContext.GetCustomEntityDB``1(SqlSugar.ConnectionConfig)">
+            <summary>
+            功能描述:获取一个自定义的数据库处理对象
+            作　　者:Blog.Core
+            </summary>
+            <param name="config">config</param>
+            <returns>返回值</returns>
+        </member>
+        <member name="M:vuetest.Core.Respository.BaseRepository`1.QueryById(System.Object,System.Boolean)">
+            <summary>
+            功能描述:根据ID查询一条数据
+            作　　者:Blog.Core
+            </summary>
+            <param name="objId">id（必须指定主键特性 [SugarColumn(IsPrimaryKey=true)]），如果是联合主键，请使用Where条件</param>
+            <param name="blnUseCache">是否使用缓存</param>
+            <returns>数据实体</returns>
+        </member>
+        <member name="M:vuetest.Core.Respository.BaseRepository`1.QueryByIDs(System.Object[])">
+            <summary>
+            功能描述:根据ID查询数据
+            作　　者:Blog.Core
+            </summary>
+            <param name="lstIds">id列表（必须指定主键特性 [SugarColumn(IsPrimaryKey=true)]），如果是联合主键，请使用Where条件</param>
+            <returns>数据实体列表</returns>
+        </member>
+        <member name="M:vuetest.Core.Respository.BaseRepository`1.Add(`0)">
+            <summary>
+            写入实体数据
+            </summary>
+            <param name="entity">博文实体类</param>
             <returns></returns>
         </member>
-        <member name="M:vuetest.Controllers.ValuesController.Post(vuetest.Models.Love)">
+        <member name="M:vuetest.Core.Respository.BaseRepository`1.Add(`0,System.Linq.Expressions.Expression{System.Func{`0,System.Object}})">
             <summary>
-            post
+            写入实体数据
             </summary>
-            <param name="value"></param>
+            <param name="entity">实体类</param>
+            <param name="insertColumns">指定只插入列</param>
+            <returns>返回自增量列</returns>
         </member>
-        <member name="M:vuetest.Controllers.ValuesController.Put(System.Int32,System.String)">
+        <member name="M:vuetest.Core.Respository.BaseRepository`1.Add(System.Collections.Generic.List{`0})">
             <summary>
-            put
+            批量插入实体(速度快)
             </summary>
-            <param name="id"></param>
-            <param name="value"></param>
+            <param name="listEntity">实体集合</param>
+            <returns>影响行数</returns>
         </member>
-        <member name="M:vuetest.Controllers.ValuesController.Delete(System.Int32)">
+        <member name="M:vuetest.Core.Respository.BaseRepository`1.Update(`0)">
             <summary>
-            del
+            更新实体数据
             </summary>
-            <param name="id"></param>
+            <param name="entity">博文实体类</param>
+            <returns></returns>
+        </member>
+        <member name="M:vuetest.Core.Respository.BaseRepository`1.Delete(`0)">
+            <summary>
+            根据实体删除一条数据
+            </summary>
+            <param name="entity">博文实体类</param>
+            <returns></returns>
+        </member>
+        <member name="M:vuetest.Core.Respository.BaseRepository`1.DeleteById(System.Object)">
+            <summary>
+            删除指定ID的数据
+            </summary>
+            <param name="id">主键ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:vuetest.Core.Respository.BaseRepository`1.DeleteByIds(System.Object[])">
+            <summary>
+            删除指定ID集合的数据(批量删除)
+            </summary>
+            <param name="ids">主键ID集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:vuetest.Core.Respository.BaseRepository`1.Query">
+            <summary>
+            功能描述:查询所有数据
+            作　　者:Blog.Core
+            </summary>
+            <returns>数据列表</returns>
+        </member>
+        <member name="M:vuetest.Core.Respository.BaseRepository`1.Query(System.String)">
+            <summary>
+            功能描述:查询数据列表
+            作　　者:Blog.Core
+            </summary>
+            <param name="strWhere">条件</param>
+            <returns>数据列表</returns>
+        </member>
+        <member name="M:vuetest.Core.Respository.BaseRepository`1.Query(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            功能描述:查询数据列表
+            作　　者:Blog.Core
+            </summary>
+            <param name="whereExpression">whereExpression</param>
+            <returns>数据列表</returns>
+        </member>
+        <member name="M:vuetest.Core.Respository.BaseRepository`1.Query(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.String)">
+            <summary>
+            功能描述:查询一个列表
+            作　　者:Blog.Core
+            </summary>
+            <param name="whereExpression">条件表达式</param>
+            <param name="strOrderByFileds">排序字段，如name asc,age desc</param>
+            <returns>数据列表</returns>
+        </member>
+        <member name="M:vuetest.Core.Respository.BaseRepository`1.Query(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`0,System.Object}},System.Boolean)">
+            <summary>
+            功能描述:查询一个列表
+            </summary>
+            <param name="whereExpression"></param>
+            <param name="orderByExpression"></param>
+            <param name="isAsc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:vuetest.Core.Respository.BaseRepository`1.Query(System.String,System.String)">
+            <summary>
+            功能描述:查询一个列表
+            作　　者:Blog.Core
+            </summary>
+            <param name="strWhere">条件</param>
+            <param name="strOrderByFileds">排序字段，如name asc,age desc</param>
+            <returns>数据列表</returns>
+        </member>
+        <member name="M:vuetest.Core.Respository.BaseRepository`1.Query(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Int32,System.String)">
+            <summary>
+            功能描述:查询前N条数据
+            作　　者:Blog.Core
+            </summary>
+            <param name="whereExpression">条件表达式</param>
+            <param name="intTop">前N条</param>
+            <param name="strOrderByFileds">排序字段，如name asc,age desc</param>
+            <returns>数据列表</returns>
+        </member>
+        <member name="M:vuetest.Core.Respository.BaseRepository`1.Query(System.String,System.Int32,System.String)">
+            <summary>
+            功能描述:查询前N条数据
+            作　　者:Blog.Core
+            </summary>
+            <param name="strWhere">条件</param>
+            <param name="intTop">前N条</param>
+            <param name="strOrderByFileds">排序字段，如name asc,age desc</param>
+            <returns>数据列表</returns>
+        </member>
+        <member name="M:vuetest.Core.Respository.BaseRepository`1.Query(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Int32,System.Int32,System.String)">
+            <summary>
+            功能描述:分页查询
+            作　　者:Blog.Core
+            </summary>
+            <param name="whereExpression">条件表达式</param>
+            <param name="intPageIndex">页码（下标0）</param>
+            <param name="intPageSize">页大小</param>
+            <param name="intTotalCount">数据总量</param>
+            <param name="strOrderByFileds">排序字段，如name asc,age desc</param>
+            <returns>数据列表</returns>
+        </member>
+        <member name="M:vuetest.Core.Respository.BaseRepository`1.Query(System.String,System.Int32,System.Int32,System.String)">
+            <summary>
+            功能描述:分页查询
+            作　　者:Blog.Core
+            </summary>
+            <param name="strWhere">条件</param>
+            <param name="intPageIndex">页码（下标0）</param>
+            <param name="intPageSize">页大小</param>
+            <param name="intTotalCount">数据总量</param>
+            <param name="strOrderByFileds">排序字段，如name asc,age desc</param>
+            <returns>数据列表</returns>
+        </member>
+        <member name="M:vuetest.Core.Respository.BaseRepository`1.QueryPage(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Int32,System.Int32,System.String)">
+            <summary>
+            分页查询[使用版本，其他分页未测试]
+            </summary>
+            <param name="whereExpression">条件表达式</param>
+            <param name="intPageIndex">页码（下标0）</param>
+            <param name="intPageSize">页大小</param>
+            <param name="strOrderByFileds">排序字段，如name asc,age desc</param>
+            <returns></returns>
+        </member>
+        <member name="P:vuetest.Core.Respository.sugar.DbContext.ConnectionString">
+            <summary>
+            连接字符串 
+            Blog.Core
+            </summary>
+        </member>
+        <member name="P:vuetest.Core.Respository.sugar.DbContext.DbType">
+            <summary>
+            数据库类型 
+            Blog.Core 
+            </summary>
+        </member>
+        <member name="P:vuetest.Core.Respository.sugar.DbContext.Db">
+            <summary>
+            数据连接对象 
+            Blog.Core 
+            </summary>
+        </member>
+        <member name="P:vuetest.Core.Respository.sugar.DbContext.Context">
+            <summary>
+            数据库上下文实例（自动关闭连接）
+            Blog.Core 
+            </summary>
+        </member>
+        <member name="M:vuetest.Core.Respository.sugar.DbContext.#ctor(System.Boolean)">
+            <summary>
+            功能描述:构造函数
+            作　　者:Blog.Core
+            </summary>
+            <param name="blnIsAutoCloseConnection">是否自动关闭连接</param>
+        </member>
+        <member name="M:vuetest.Core.Respository.sugar.DbContext.GetEntityDB``1">
+            <summary>
+            功能描述:获取数据库处理对象
+            作　　者:Blog.Core
+            </summary>
+            <returns>返回值</returns>
+        </member>
+        <member name="M:vuetest.Core.Respository.sugar.DbContext.GetEntityDB``1(SqlSugar.SqlSugarClient)">
+            <summary>
+            功能描述:获取数据库处理对象
+            作　　者:Blog.Core
+            </summary>
+            <param name="db">db</param>
+            <returns>返回值</returns>
+        </member>
+        <member name="M:vuetest.Core.Respository.sugar.DbContext.CreateClassFileByDBTalbe(System.String)">
+            <summary>
+            功能描述:根据数据库表生产实体类
+            作　　者:Blog.Core
+            </summary>       
+            <param name="strPath">实体类存放路径</param>
+        </member>
+        <member name="M:vuetest.Core.Respository.sugar.DbContext.CreateClassFileByDBTalbe(System.String,System.String)">
+            <summary>
+            功能描述:根据数据库表生产实体类
+            作　　者:Blog.Core
+            </summary>
+            <param name="strPath">实体类存放路径</param>
+            <param name="strNameSpace">命名空间</param>
+        </member>
+        <member name="M:vuetest.Core.Respository.sugar.DbContext.CreateClassFileByDBTalbe(System.String,System.String,System.String[])">
+            <summary>
+            功能描述:根据数据库表生产实体类
+            作　　者:Blog.Core
+            </summary>
+            <param name="strPath">实体类存放路径</param>
+            <param name="strNameSpace">命名空间</param>
+            <param name="lstTableNames">生产指定的表</param>
+        </member>
+        <member name="M:vuetest.Core.Respository.sugar.DbContext.CreateClassFileByDBTalbe(System.String,System.String,System.String[],System.String,System.Boolean)">
+            <summary>
+            功能描述:根据数据库表生产实体类
+            作　　者:Blog.Core
+            </summary>
+            <param name="strPath">实体类存放路径</param>
+            <param name="strNameSpace">命名空间</param>
+            <param name="lstTableNames">生产指定的表</param>
+            <param name="strInterface">实现接口</param>
+        </member>
+        <member name="M:vuetest.Core.Respository.sugar.DbContext.CreateTableByEntity``1(System.Boolean,``0[])">
+            <summary>
+            功能描述:根据实体类生成数据库表
+            作　　者:Blog.Core
+            </summary>
+            <param name="blnBackupTable">是否备份表</param>
+            <param name="lstEntitys">指定的实体</param>
+        </member>
+        <member name="M:vuetest.Core.Respository.sugar.DbContext.CreateTableByEntity(System.Boolean,System.Type[])">
+            <summary>
+            功能描述:根据实体类生成数据库表
+            作　　者:Blog.Core
+            </summary>
+            <param name="blnBackupTable">是否备份表</param>
+            <param name="lstEntitys">指定的实体</param>
+        </member>
+        <member name="M:vuetest.Core.Respository.sugar.DbContext.GetDbContext(System.Boolean)">
+            <summary>
+            功能描述:获得一个DbContext
+            作　　者:Blog.Core
+            </summary>
+            <param name="blnIsAutoCloseConnection">是否自动关闭连接（如果为false，则使用接受时需要手动关闭Db）</param>
+            <returns>返回值</returns>
+        </member>
+        <member name="M:vuetest.Core.Respository.sugar.DbContext.Init(System.String,SqlSugar.DbType)">
+            <summary>
+            功能描述:设置初始化参数
+            作　　者:Blog.Core
+            </summary>
+            <param name="strConnectionString">连接字符串</param>
+            <param name="enmDbType">数据库类型</param>
+        </member>
+        <member name="M:vuetest.Core.Respository.sugar.DbContext.GetConnectionConfig(System.Boolean,System.Boolean)">
+            <summary>
+            功能描述:创建一个链接配置
+            作　　者:Blog.Core
+            </summary>
+            <param name="blnIsAutoCloseConnection">是否自动关闭连接</param>
+            <param name="blnIsShardSameThread">是否夸类事务</param>
+            <returns>ConnectionConfig</returns>
+        </member>
+        <member name="M:vuetest.Core.Respository.sugar.DbContext.GetCustomDB(SqlSugar.ConnectionConfig)">
+            <summary>
+            功能描述:获取一个自定义的DB
+            作　　者:Blog.Core
+            </summary>
+            <param name="config">config</param>
+            <returns>返回值</returns>
+        </member>
+        <member name="M:vuetest.Core.Respository.sugar.DbContext.GetCustomEntityDB``1(SqlSugar.SqlSugarClient)">
+            <summary>
+            功能描述:获取一个自定义的数据库处理对象
+            作　　者:Blog.Core
+            </summary>
+            <param name="sugarClient">sugarClient</param>
+            <returns>返回值</returns>
+        </member>
+        <member name="M:vuetest.Core.Respository.sugar.DbContext.GetCustomEntityDB``1(SqlSugar.ConnectionConfig)">
+            <summary>
+            功能描述:获取一个自定义的数据库处理对象
+            作　　者:Blog.Core
+            </summary>
+            <param name="config">config</param>
+            <returns>返回值</returns>
+        </member>
+        <member name="M:vuetest.Core.Service.BaseServices`1.QueryById(System.Object,System.Boolean)">
+            <summary>
+            功能描述:根据ID查询一条数据
+            作　　者:AZLinli.Blog.Core
+            </summary>
+            <param name="objId">id（必须指定主键特性 [SugarColumn(IsPrimaryKey=true)]），如果是联合主键，请使用Where条件</param>
+            <param name="blnUseCache">是否使用缓存</param>
+            <returns>数据实体</returns>
+        </member>
+        <member name="M:vuetest.Core.Service.BaseServices`1.QueryByIDs(System.Object[])">
+            <summary>
+            功能描述:根据ID查询数据
+            作　　者:AZLinli.Blog.Core
+            </summary>
+            <param name="lstIds">id列表（必须指定主键特性 [SugarColumn(IsPrimaryKey=true)]），如果是联合主键，请使用Where条件</param>
+            <returns>数据实体列表</returns>
+        </member>
+        <member name="M:vuetest.Core.Service.BaseServices`1.Add(`0)">
+            <summary>
+            写入实体数据
+            </summary>
+            <param name="entity">博文实体类</param>
+            <returns></returns>
+        </member>
+        <member name="M:vuetest.Core.Service.BaseServices`1.Update(`0)">
+            <summary>
+            更新实体数据
+            </summary>
+            <param name="entity">博文实体类</param>
+            <returns></returns>
+        </member>
+        <member name="M:vuetest.Core.Service.BaseServices`1.Delete(`0)">
+            <summary>
+            根据实体删除一条数据
+            </summary>
+            <param name="entity">博文实体类</param>
+            <returns></returns>
+        </member>
+        <member name="M:vuetest.Core.Service.BaseServices`1.DeleteById(System.Object)">
+            <summary>
+            删除指定ID的数据
+            </summary>
+            <param name="id">主键ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:vuetest.Core.Service.BaseServices`1.DeleteByIds(System.Object[])">
+            <summary>
+            删除指定ID集合的数据(批量删除)
+            </summary>
+            <param name="ids">主键ID集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:vuetest.Core.Service.BaseServices`1.Query">
+            <summary>
+            功能描述:查询所有数据
+            作　　者:AZLinli.Blog.Core
+            </summary>
+            <returns>数据列表</returns>
+        </member>
+        <member name="M:vuetest.Core.Service.BaseServices`1.Query(System.String)">
+            <summary>
+            功能描述:查询数据列表
+            作　　者:AZLinli.Blog.Core
+            </summary>
+            <param name="strWhere">条件</param>
+            <returns>数据列表</returns>
+        </member>
+        <member name="M:vuetest.Core.Service.BaseServices`1.Query(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            功能描述:查询数据列表
+            作　　者:AZLinli.Blog.Core
+            </summary>
+            <param name="whereExpression">whereExpression</param>
+            <returns>数据列表</returns>
+        </member>
+        <member name="M:vuetest.Core.Service.BaseServices`1.Query(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`0,System.Object}},System.Boolean)">
+            <summary>
+            功能描述:查询一个列表
+            作　　者:AZLinli.Blog.Core
+            </summary>
+            <param name="whereExpression">条件表达式</param>
+            <param name="strOrderByFileds">排序字段，如name asc,age desc</param>
+            <returns>数据列表</returns>
+        </member>
+        <member name="M:vuetest.Core.Service.BaseServices`1.Query(System.String,System.String)">
+            <summary>
+            功能描述:查询一个列表
+            作　　者:AZLinli.Blog.Core
+            </summary>
+            <param name="strWhere">条件</param>
+            <param name="strOrderByFileds">排序字段，如name asc,age desc</param>
+            <returns>数据列表</returns>
+        </member>
+        <member name="M:vuetest.Core.Service.BaseServices`1.Query(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Int32,System.String)">
+            <summary>
+            功能描述:查询前N条数据
+            作　　者:AZLinli.Blog.Core
+            </summary>
+            <param name="whereExpression">条件表达式</param>
+            <param name="intTop">前N条</param>
+            <param name="strOrderByFileds">排序字段，如name asc,age desc</param>
+            <returns>数据列表</returns>
+        </member>
+        <member name="M:vuetest.Core.Service.BaseServices`1.Query(System.String,System.Int32,System.String)">
+            <summary>
+            功能描述:查询前N条数据
+            作　　者:AZLinli.Blog.Core
+            </summary>
+            <param name="strWhere">条件</param>
+            <param name="intTop">前N条</param>
+            <param name="strOrderByFileds">排序字段，如name asc,age desc</param>
+            <returns>数据列表</returns>
+        </member>
+        <member name="M:vuetest.Core.Service.BaseServices`1.Query(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Int32,System.Int32,System.String)">
+            <summary>
+            功能描述:分页查询
+            作　　者:AZLinli.Blog.Core
+            </summary>
+            <param name="whereExpression">条件表达式</param>
+            <param name="intPageIndex">页码（下标0）</param>
+            <param name="intPageSize">页大小</param>
+            <param name="intTotalCount">数据总量</param>
+            <param name="strOrderByFileds">排序字段，如name asc,age desc</param>
+            <returns>数据列表</returns>
+        </member>
+        <member name="M:vuetest.Core.Service.BaseServices`1.Query(System.String,System.Int32,System.Int32,System.String)">
+            <summary>
+            功能描述:分页查询
+            作　　者:AZLinli.Blog.Core
+            </summary>
+            <param name="strWhere">条件</param>
+            <param name="intPageIndex">页码（下标0）</param>
+            <param name="intPageSize">页大小</param>
+            <param name="intTotalCount">数据总量</param>
+            <param name="strOrderByFileds">排序字段，如name asc,age desc</param>
+            <returns>数据列表</returns>
+        </member>
+        <member name="P:vuetest.Core.ViewModel.AdvertisementViewModel.ImgUrl">
+            <summary>
+            广告图片
+            </summary>
+        </member>
+        <member name="P:vuetest.Core.ViewModel.AdvertisementViewModel.Title">
+            <summary>
+            广告标题
+            </summary>
+        </member>
+        <member name="P:vuetest.Core.ViewModel.AdvertisementViewModel.Url">
+            <summary>
+            广告链接
+            </summary>
+        </member>
+        <member name="P:vuetest.Core.ViewModel.AdvertisementViewModel.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:vuetest.Core.ViewModel.AdvertisementViewModel.Createdate">
+            <summary>
+            创建时间
+            </summary>
         </member>
         <member name="T:vuetest.Models.Love">
             <summary>
@@ -202,6 +1266,41 @@
         <member name="P:vuetest.Models.MessageModel`1.Data">
             <summary>
             返回数据集合
+            </summary>
+        </member>
+        <member name="T:vuetest.Models.PageModel`1">
+            <summary>
+            通用分页信息类
+            </summary>
+        </member>
+        <member name="P:vuetest.Models.PageModel`1.page">
+            <summary>
+            当前页标
+            </summary>
+        </member>
+        <member name="P:vuetest.Models.PageModel`1.pageCount">
+            <summary>
+            总页数
+            </summary>
+        </member>
+        <member name="P:vuetest.Models.PageModel`1.dataCount">
+            <summary>
+            数据总数
+            </summary>
+        </member>
+        <member name="P:vuetest.Models.PageModel`1.PageSize">
+            <summary>
+            每页大小
+            </summary>
+        </member>
+        <member name="P:vuetest.Models.PageModel`1.data">
+            <summary>
+            返回数据
+            </summary>
+        </member>
+        <member name="P:vuetest.Startup.Repository">
+            <summary>
+            log4net 仓储库
             </summary>
         </member>
         <member name="M:vuetest.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
