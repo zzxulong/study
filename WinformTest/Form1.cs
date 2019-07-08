@@ -22,5 +22,10 @@ namespace WinformTest
           
             this.contextMenuStrip1.Show(label1, this.label1.Location);
         }
-    }
+
+		private void Form1_Load(object sender,EventArgs e)
+		{
+
+		}
+	}
 }
