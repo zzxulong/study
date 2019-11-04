@@ -223,7 +223,8 @@ namespace ConsoleTest.Core
                 request.ServicePoint.BindIPEndPointDelegate = new BindIPEndPoint(BindIPEndPointCallback);
             }
             //设置Header参数  
-            if (item.Header != null && item.Header.Count > 0) foreach (string key in item.Header.AllKeys)
+            if (item.Header != null && item.Header.Count > 0) 
+                foreach (string key in item.Header.AllKeys)
                 {
                     request.Headers.Add(key, item.Header[key]);
                 }
@@ -343,7 +344,17 @@ namespace ConsoleTest.Core
                     StreamReader r = new StreamReader(item.Postdata, postencoding);
                     buffer = postencoding.GetBytes(r.ReadToEnd());
                     r.Close();
-                } //写入字符串  
+                } //写入字符串
+                else if (item.PostDataType == PostDataType.Dictionary && item.PostdataDic != null && item.PostdataDic.Count > 0)
+                {
+                    string strFormData = "";
+                    foreach (KeyValuePair<string, string> pair in item.PostdataDic)
+                    {
+                        strFormData += pair.Key + "=" + pair.Value + "&";
+                    }
+                    strFormData = strFormData.Substring(0, strFormData.Length - 1);
+                    buffer = postencoding.GetBytes(strFormData);
+                }
                 else if (!string.IsNullOrWhiteSpace(item.Postdata))
                 {
                     buffer = postencoding.GetBytes(item.Postdata);
@@ -739,6 +750,7 @@ namespace ConsoleTest.Core
                 }
                 catch { }
                 return string.Empty;
+                
             }
         }
     }
@@ -772,8 +784,13 @@ namespace ConsoleTest.Core
         /// <summary>  
         /// 传文件，Postdata必须设置为文件的绝对路径，必须设置Encoding的值  
         /// </summary>  
-        FilePath
+        FilePath,
+        /// <summary>
+        /// 传入字典
+        /// </summary>
+        Dictionary,
     }
+   
     /// <summary>  
     /// Cookie返回类型  
     /// </summary>  
