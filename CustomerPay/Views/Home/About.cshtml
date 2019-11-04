@@ -1,0 +1,68 @@
+﻿@{
+
+	ViewBag.Title = "立即支付";
+
+
+	var wxJSSDKSignPackage = GuangYi.WeiXin.MP.Api.ApiHandlerWapper.ExecuteApiWithJsApiTicket(jsApiTicket => GuangYi.WeiXin.MP.Other.JsApi.Sign(jsApiTicket), GuangYi.WeiXin.MP.Containers.DefaultTokenContainer.Instance);
+	var wxJsPay = new  GuangYi.WeiXin.MP.Pay.JsApiPay.JsApiPay
+	{
+		OrderId = 654651465156165,
+		ProductDesc = "Reaijiaoyu支付",
+		Amount = 1,
+		OpenId = ViewBag.openId
+	};
+	var jsApiPay = wxJsPay.CreatePay();
+}
+
+<div class="button-sp-area bm68">
+    <a href="javascript:;" class="weui-btn">立即支付</a>
+</div>
+<p>@Html.Raw(GuangYi.Common.Helpers.JsonHelper.SerializeJson(wxJSSDKSignPackage))</p>
+
+<p>
+	@Html.Raw(GuangYi.Common.Helpers.JsonHelper.SerializeJson(wxJsPay))
+</p>
+
+
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script type="text/javascript">
+
+        //微信JSSDK配置
+        wx.config({
+            debug: false,
+            appId: '@wxJSSDKSignPackage.AppId',
+            timestamp: '@wxJSSDKSignPackage.Timestamp',
+            nonceStr: '@wxJSSDKSignPackage.NonceStr',
+            signature: '@wxJSSDKSignPackage.Signature',
+            jsApiList: [
+                'checkJsApi',
+                'chooseWXPay'
+            ]
+        });
+        //加载JS自定义方法
+        wx.ready(function () {
+            $(".weui-btn").on("click", function () {
+                $(this).attr("disabled", true).attr("value", "处理中...");
+
+                    // 微信支付接口
+                    wx.chooseWXPay({
+                        timestamp: @Html.Raw(jsApiPay.Timestamp),
+                        nonceStr: @Html.Raw(jsApiPay.NonceStr),
+                        package: @Html.Raw(jsApiPay.Package),
+                        signType:@Html.Raw(jsApiPay.SignType),
+                        paySign:@Html.Raw(jsApiPay.PaySign),
+                        success: function (res) {
+                            // 支付成功后的回调函数
+                            window.location.href = "/Home/Index";
+                        },
+                        fail: function (e) {
+                        },
+                        cancel: function () {
+                        }
+                    });
+            });
+        });
+        wx.error(function (res) {
+            //alert("支付错误，请联系考试中心管理人员！");
+        });
+    </script>

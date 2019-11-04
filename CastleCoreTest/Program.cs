@@ -1,24 +1,70 @@
 ﻿using Castle.DynamicProxy;
 using CastleCoreTest.Core;
+using ConsoleTest.Core;
 using System;
+using System.Net;
 using System.Threading.Tasks;
 
 namespace CastleCoreTest
 {
     class Program
     {
+
+
+
+//Accept-Encoding: gzip, deflate, br
+
+
+        public static HttpHelper httpHelper=new HttpHelper();
 		private static int _result;
 		static void Main(string[] args)
         {
-			#region 拦截器
-			//Interceptor();
-			#endregion
+            #region register
+            var url="https://account.gandi.net/zh-hans/create_account";
+            var item=new HttpItem(){ 
+                Expect100Continue=false,
+                URL=url,
+                
+            };
+            var header=new WebHeaderCollection();
+            header.Add("Cache-Control", "max-age=0");
+            header.Add("Origin", "https://account.gandi.net");
+            header.Add("Upgrade-Insecure-Requests", "1");
+            header.Add("DNT", "1");
+            header.Add("Sec-Fetch-Mode", "navigate");
+            header.Add("Sec-Fetch-User", "?1");
+            header.Add("Sec-Fetch-Site", "same-origin");
+            header.Add("Accept-Language", "zh-CN,zh;q=0.9");
+            var content=httpHelper.GetHtml(item);
+            var doc = new HtmlAgilityPack.HtmlDocument();
+            doc.LoadHtml(content.Html);
+            var token=doc.DocumentNode.SelectSingleNode("//input[@name='csrf_token']").Attributes["value"].Value;
+            item = new HttpItem() {
+                URL = url,
+                Accept = "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3",
+                Method="POST",
+                KeepAlive=true,
+                ContentType = "application/x-www-form-urlencoded",
+                UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36",
+                Cookie = content.Cookie,
+                Referer=url,
+                Header= header,
+                Host= "account.gandi.net",
+                Postdata=$"user.email=619666817@qq.com&user.username=zzxulongxulong&user.password=xulong123AaaaaaA&contracts=g2&redirect=&csrf_token={token}&form.submitted=True"
+            };
+            content=httpHelper.GetHtml(item);
+            #endregion
 
-			#region interlocked
-			//Interlocked();
-			#endregion
 
-			Console.WriteLine("Hello World!");
+            #region 拦截器
+            //Interceptor();
+            #endregion
+
+            #region interlocked
+            //Interlocked();
+            #endregion
+
+            Console.WriteLine("Hello World!");
 
 		}
 
