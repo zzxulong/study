@@ -19,6 +19,10 @@ namespace CastleCoreTest
 		private static int _result;
 		static void Main(string[] args)
         {
+            #region email
+
+            #endregion
+
             #region register
             var url="https://account.gandi.net/zh-hans/create_account";
             var item=new HttpItem(){ 

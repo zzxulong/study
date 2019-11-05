@@ -8,6 +8,7 @@
   <ItemGroup>
     <PackageReference Include="Castle.Core" Version="4.4.0" />
     <PackageReference Include="HtmlAgilityPack" Version="1.11.16" />
+    <PackageReference Include="S22.Imap.Standard" Version="3.6.1" />
   </ItemGroup>
 
 </Project>
