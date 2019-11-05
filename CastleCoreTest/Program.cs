@@ -3,6 +3,7 @@ using CastleCoreTest.Core;
 using ConsoleTest.Core;
 using System;
 using System.Net;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace CastleCoreTest
@@ -35,6 +36,7 @@ namespace CastleCoreTest
             header.Add("Origin", "https://account.gandi.net");
             header.Add("Upgrade-Insecure-Requests", "1");
             header.Add("DNT", "1");
+            header.Add("Accept-Encoding", "gzip, deflate, br");
             header.Add("Sec-Fetch-Mode", "navigate");
             header.Add("Sec-Fetch-User", "?1");
             header.Add("Sec-Fetch-Site", "same-origin");
@@ -47,6 +49,8 @@ namespace CastleCoreTest
                 URL = url,
                 Accept = "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3",
                 Method="POST",
+                Encoding=Encoding.UTF8,
+                PostEncoding=Encoding.UTF8,
                 KeepAlive=true,
                 ContentType = "application/x-www-form-urlencoded",
                 UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36",
@@ -54,7 +58,7 @@ namespace CastleCoreTest
                 Referer=url,
                 Header= header,
                 Host= "account.gandi.net",
-                Postdata=$"user.email=619666817@qq.com&user.username=zzxulongxulong&user.password=xulong123AaaaaaA&contracts=g2&redirect=&csrf_token={token}&form.submitted=True"
+                Postdata=$"user.email=1619666817@qq.com&user.username=longqingfenglong&user.password=xulong123AaaaaaA&contracts=g2&redirect=&csrf_token={token}&form.submitted=True"
             };
             content=httpHelper.GetHtml(item);
             #endregion
