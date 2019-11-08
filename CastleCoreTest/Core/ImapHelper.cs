@@ -13,8 +13,12 @@ namespace ConsoleTest.Core
             string ImapServer = "mail.ldddns.com";
             string ImapUserame = "song";
             string ImapPwd = "20191104";
+
+            var t = new S22.Imap.ImapClient(ImapServer, 110, ImapUserame, ImapPwd);
+
             using (S22.Imap.ImapClient client = new S22.Imap.ImapClient(ImapServer, 110, ImapUserame, ImapPwd))
             {
+                
                 var unseen = client.Search(SearchCondition.Unseen());
 
                 if (unseen == null || unseen.Count() == 0)
