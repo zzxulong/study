@@ -8,17 +8,49 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace CastleCoreTest
 {
     class Program
     {
+        class SimpleMath
+        {
+            // 乘法方法
+            public int Multiply (int num1, int num2)
+            {
+                return num1 * num2;
+            }
+
+            // 除法方法
+            public int Divide (int num1, int num2)
+            {
+                return num1 / num2;
+            }
+        }
 
         public static HttpHelper httpHelper=new HttpHelper();
 		private static int _result;
+        public delegate int Call (int num1, int num2);//第一步：定义委托类型
         static void Main (string[] args)
         {
+
+            Call objCall;//第二步：声明委托变量
+            // Math 类的对象
+            SimpleMath objMath = new SimpleMath();
+            // 第三步：初始化委托变量，将方法与委托关联起来
+            objCall = new Call(objMath.Multiply);
+            System.Console.WriteLine("结果为 {0}", objCall(5, 3));
+
+            objCall += objMath.Divide;//向委托增加一个方法
+            //objCall -=  objMath.Divide;//向委托减去一个方法
+
+            // 调用委托实例,先执行objMath.Multiply，然后执行objMath.Divide
+            int result = objCall(5, 3);
+            System.Console.WriteLine("结果为 {0}", result);
+
+
             #region email
             //"song","20191104","mail.ldddns.com",110,false
             //var popHelper=new PopHelper();
@@ -42,7 +74,7 @@ namespace CastleCoreTest
             //            var tcontent = httpHelper.GetHtml(vaildItem);
             //        }
             //    }
-                
+
             //}
             #endregion
             #region register
@@ -84,10 +116,10 @@ namespace CastleCoreTest
             //content=httpHelper.GetHtml(item);
             #endregion
 
-           
+
 
             #region login
-            
+
             var header = new WebHeaderCollection();
             header.Add("Upgrade-Insecure-Requests", "1");
             header.Add("DNT", "1");
