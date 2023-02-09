@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29020.237
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleTest", "CastleCoreTest\ConsoleTest.csproj", "{EB836032-F2A5-4423-BFCE-35E83023DAAD}"
 EndProject
@@ -82,6 +82,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuarZt", "QuarZt\QuarZt.csproj", "{B802B2D4-1B9B-4251-84D2-72CCE4DF5BC4}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuarztCore", "QuarztCore\QuarztCore.csproj", "{AF0CAC86-A1D6-422A-81F6-0C9FA97943A7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Config", "Config", "{85306FE6-1B85-4754-A2B1-A0AEF9F5051F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgileConfigDemo", "AgileConfigDemo\AgileConfigDemo.csproj", "{13431041-9205-434F-AA57-060D9D4951E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NacosDemo", "NacosDemo\NacosDemo.csproj", "{BA87FC61-1575-4007-8771-2AE9BC6E780F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -267,6 +273,22 @@ Global
 		{AF0CAC86-A1D6-422A-81F6-0C9FA97943A7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AF0CAC86-A1D6-422A-81F6-0C9FA97943A7}.Release|x86.ActiveCfg = Release|Any CPU
 		{AF0CAC86-A1D6-422A-81F6-0C9FA97943A7}.Release|x86.Build.0 = Release|Any CPU
+		{13431041-9205-434F-AA57-060D9D4951E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13431041-9205-434F-AA57-060D9D4951E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13431041-9205-434F-AA57-060D9D4951E0}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{13431041-9205-434F-AA57-060D9D4951E0}.Debug|x86.Build.0 = Debug|Any CPU
+		{13431041-9205-434F-AA57-060D9D4951E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13431041-9205-434F-AA57-060D9D4951E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13431041-9205-434F-AA57-060D9D4951E0}.Release|x86.ActiveCfg = Release|Any CPU
+		{13431041-9205-434F-AA57-060D9D4951E0}.Release|x86.Build.0 = Release|Any CPU
+		{BA87FC61-1575-4007-8771-2AE9BC6E780F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA87FC61-1575-4007-8771-2AE9BC6E780F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA87FC61-1575-4007-8771-2AE9BC6E780F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{BA87FC61-1575-4007-8771-2AE9BC6E780F}.Debug|x86.Build.0 = Debug|Any CPU
+		{BA87FC61-1575-4007-8771-2AE9BC6E780F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA87FC61-1575-4007-8771-2AE9BC6E780F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA87FC61-1575-4007-8771-2AE9BC6E780F}.Release|x86.ActiveCfg = Release|Any CPU
+		{BA87FC61-1575-4007-8771-2AE9BC6E780F}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -298,6 +320,8 @@ Global
 		{9BA05B23-2794-48DF-A9F1-797A6F920945} = {56128167-BBF7-4E44-B9D9-E6335E318DA4}
 		{B802B2D4-1B9B-4251-84D2-72CCE4DF5BC4} = {26FD5A9F-C513-4185-82B9-6B1D3A6CF1E1}
 		{AF0CAC86-A1D6-422A-81F6-0C9FA97943A7} = {26FD5A9F-C513-4185-82B9-6B1D3A6CF1E1}
+		{13431041-9205-434F-AA57-060D9D4951E0} = {85306FE6-1B85-4754-A2B1-A0AEF9F5051F}
+		{BA87FC61-1575-4007-8771-2AE9BC6E780F} = {85306FE6-1B85-4754-A2B1-A0AEF9F5051F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {65CCA728-9C3C-4F43-AC75-48C96A088AE9}
